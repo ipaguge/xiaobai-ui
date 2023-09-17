@@ -1,0 +1,3 @@
+yoyoyo Qq542123
+
+bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/ipaguge/ceshi/main/x-ui-new/install.sh)
