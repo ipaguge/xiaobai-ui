@@ -9,8 +9,8 @@ services:
       - "181:181"
     volumes:
       - ./config:/app/config
-      - ./temp:app/temp
-      - ./agentInstall:app/agentInstall
+      - ./temp:/app/temp
+      - ./agentInstall:/app/agentInstall
     depends_on:
       - mysql
       - redis
