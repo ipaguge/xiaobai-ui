@@ -2,7 +2,7 @@ version: '3'
 
 services:
   xuinew:
-    image: neikuwaichuan/v2-admin:16.0
+    image: neikuwaichuan/v2-admin:17.0
     restart: always
     ports:
       - "80:80"
