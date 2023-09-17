@@ -148,8 +148,8 @@ install_agent() {
     exit 1
   fi
 
-  $isSudo docker stop xiaobai_agent
-  $isSudo docker rm   xiaobai_agent
+#  $isSudo docker stop xiaobai_agent
+#  $isSudo docker rm   xiaobai_agent
   if [[ -z $($isSudo docker ps -a -q -f "name=^xiaobai_agent$") ]]; then
     echo_content green "---> 安装agent"
 
