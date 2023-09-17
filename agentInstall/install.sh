@@ -153,13 +153,13 @@ install_agent() {
   if [[ -z $($isSudo docker ps -a -q -f "name=^xiaobai_agent$") ]]; then
     echo_content green "---> 安装agent"
 
-    $isSudo docker pull neikuwaichuan/v2-agent:9.0 &&
+    $isSudo docker pull neikuwaichuan/v2-agent:10.0 &&
       $isSudo docker run -d --name xiaobai_agent --restart always \
         --network=host \
         -v /"$directory":/app/config \
         -v /"$directory_tmp":/app/temp \
         -v /"$directory_bin":/app/bin \
-        neikuwaichuan/v2-agent:9.0
+        neikuwaichuan/v2-agent:10.0
 
     if [[ -n $($isSudo docker ps -q -f "name=^xiaobai_agent$" -f "status=running") ]]; then
       echo_content skyBlue "---> agent安装完成"
