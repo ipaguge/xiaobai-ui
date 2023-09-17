@@ -115,8 +115,8 @@ if ! command -v git &> /dev/null; then
 fi
 
 # 如果ceshi/x-ui-new目录不存在，则执行git clone
-if [[ ! -d "ceshi/x-ui-new" ]]; then
-    git clone https://github.com/ipaguge/ceshi.git
+if [[ ! -d "xiaobai-ui" ]]; then
+    git clone https://github.com/ipaguge/xiaobai-ui.git
 fi
 
 # 获取外网IP
@@ -127,7 +127,7 @@ if [[ -z $IP ]]; then
     echo "无法获取外网IP。"
     exit 1
 fi
-cd ceshi/x-ui-new
+cd xiaobai-ui
 
 # 替换config目录下的settings.yml文件中的0.0.0.0为外网IP
 sed -i "s/0.0.0.0/$IP/g" config/settings.yml
