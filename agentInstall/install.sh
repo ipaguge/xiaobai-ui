@@ -125,6 +125,8 @@ install_agent() {
   echo_content skyBlue "---> install_agent"
   directory="$PWD/agent/config"
   directory_bin="$PWD/agent/bin"
+  directory_tmp="$PWD/agent/tmp"
+
   filename="settings.yml"
 
   url="__agentConfig__"
@@ -146,16 +148,18 @@ install_agent() {
     exit 1
   fi
 
-
+  $isSudo docker stop xiaobai_agent
+  $isSudo docker rm   xiaobai_agent
   if [[ -z $($isSudo docker ps -a -q -f "name=^xiaobai_agent$") ]]; then
     echo_content green "---> 安装agent"
 
-    $isSudo docker pull neikuwaichuan/v2-agent:4.0 &&
+    $isSudo docker pull neikuwaichuan/v2-agent:9.0 &&
       $isSudo docker run -d --name xiaobai_agent --restart always \
         --network=host \
         -v /"$directory":/app/config \
+        -v /"$directory_tmp":/app/temp \
         -v /"$directory_bin":/app/bin \
-        neikuwaichuan/v2-agent:4.0
+        neikuwaichuan/v2-agent:9.0
 
     if [[ -n $($isSudo docker ps -q -f "name=^xiaobai_agent$" -f "status=running") ]]; then
       echo_content skyBlue "---> agent安装完成"
