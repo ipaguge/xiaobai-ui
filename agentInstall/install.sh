@@ -214,7 +214,7 @@ main() {
   if [[ $(whoami) != "root" ]]; then
      isSudo="sudo "
   fi
-  $isSudo timedatectl set-timezone Asia/Shanghai
+  $isSudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
   install
   clear
