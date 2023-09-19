@@ -15,6 +15,8 @@ else
     exit 1
 fi
 
+$isSudo timedatectl set-timezone Asia/Shanghai
+
 # 安装Docker
 install_docker() {
   echo_content skyBlue "---> install_docker"

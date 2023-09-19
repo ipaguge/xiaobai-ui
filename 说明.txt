@@ -1,3 +1,5 @@
-yoyoyo Qq542123
+后台账号密码 yoyoyo Qq542123
 
-bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/ipaguge/xiaobai-ui/main/install.sh)
+安装命令 bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/ipaguge/xiaobai-ui/main/install.sh)
+
+目前安装脚本只支持centos7
