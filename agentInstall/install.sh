@@ -148,18 +148,24 @@ install_agent() {
     exit 1
   fi
 
-#  $isSudo docker stop xiaobai_agent
-#  $isSudo docker rm   xiaobai_agent
+  IMAGE="neikuwaichuan/v2-agent:13.0"
+  if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$IMAGE$"; then
+       echo "The image $IMAGE has been pulled."
+  else
+       $isSudo docker stop xiaobai_agent
+       $isSudo docker rm   xiaobai_agent
+  fi
+
   if [[ -z $($isSudo docker ps -a -q -f "name=^xiaobai_agent$") ]]; then
     echo_content green "---> 安装agent"
 
-    $isSudo docker pull neikuwaichuan/v2-agent:12.0 &&
+    $isSudo docker pull $IMAGE &&
       $isSudo docker run -d --name xiaobai_agent --restart always \
         --network=host \
         -v /"$directory":/app/config \
         -v /"$directory_tmp":/app/temp \
         -v /"$directory_bin":/app/bin \
-        neikuwaichuan/v2-agent:12.0
+        $IMAGE
 
     if [[ -n $($isSudo docker ps -q -f "name=^xiaobai_agent$" -f "status=running") ]]; then
       echo_content skyBlue "---> agent安装完成"
