@@ -160,7 +160,7 @@ install_agent() {
     echo_content green "---> 安装agent"
 
     $isSudo docker pull $IMAGE &&
-      $isSudo docker run -d --name xiaobai_agent --restart always \
+      $isSudo docker run -d --name xiaobai_agent -e TZ=Asia/Shanghai --restart always \
         --network=host \
         -v /"$directory":/app/config \
         -v /"$directory_tmp":/app/temp \

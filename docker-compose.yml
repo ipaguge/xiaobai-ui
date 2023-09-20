@@ -2,11 +2,13 @@ version: '3'
 
 services:
   xuinew:
-    image: neikuwaichuan/v2-admin:20.0
+    image: neikuwaichuan/v2-admin:22.0
     restart: always
     ports:
       - "80:80"
       - "181:181"
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - ./config:/app/config
       - ./temp:/app/temp
@@ -26,6 +28,7 @@ services:
       MYSQL_DATABASE: x-ui-new
       MYSQL_USER: xuinewdb
       MYSQL_PASSWORD: 123456
+      TZ: Asia/Shanghai
     volumes:
       - ./x-ui-new.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
@@ -35,6 +38,8 @@ services:
     image: redis:latest
     restart: always
     container_name: xuinewredis
+    environment:
+      - TZ=Asia/Shanghai
     networks:
       - xuinew
 networks:
