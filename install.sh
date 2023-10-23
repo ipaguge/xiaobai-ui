@@ -103,9 +103,9 @@ EOF
     fi
 
     if [ $inChina -eq 0 ]; then
-        $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+        $isSudo sh <("curl -sL https://get.docker.com") --mirror Aliyun
     else
-        $isSudo sh <(curl -sL https://get.docker.com)
+        $isSudo sh <("curl -sL https://get.docker.com")
     fi
 
     $isSudo iptables -A INPUT -p tcp --dport 10000:60000 -j ACCEPT
@@ -137,6 +137,14 @@ EOF
     fi
     echo_content skyBlue "---> 你已经安装了Docker"
   fi
+
+    # 检查并安装 docker-compose
+    if ! command -v docker-compose &> /dev/null; then
+        echo "docker-compose 未安装，正在安装..."
+        #$isSudo curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+    fi
 }
 
 install_docker
