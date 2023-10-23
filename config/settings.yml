@@ -10,9 +10,6 @@ settings:
     port: 80 # 服务端口号
     rpcPort: 181
     frpsPort: 700
-
-
-
     readtimeout: 1
     writertimeout: 2
     # 数据权限功能开关
