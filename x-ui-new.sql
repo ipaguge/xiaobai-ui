@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 20/08/2023 19:34:01
+ Date: 23/10/2023 21:24:34
 */
 
 SET NAMES utf8mb4;
@@ -37,7 +37,7 @@ CREATE TABLE `sys_api` (
   KEY `idx_sys_api_deleted_at` (`deleted_at`),
   KEY `idx_sys_api_create_by` (`create_by`),
   KEY `idx_sys_api_update_by` (`update_by`)
-) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=198 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of sys_api
@@ -75,10 +75,10 @@ INSERT INTO `sys_api` VALUES (40, 'go-admin/app/admin/apis.SysMenu.GetMenuTreeSe
 INSERT INTO `sys_api` VALUES (41, 'go-admin/app/admin/apis.SysMenu.Get-fm', '菜单通过id获取', '/api/v1/menu/:id', 'BUS', 'GET', '2021-05-13 19:59:02.584', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (42, 'go-admin/app/admin/apis.SysMenu.GetMenuRole-fm', '角色菜单【顶部左侧菜单】', '/api/v1/menurole', 'SYS', 'GET', '2021-05-13 19:59:02.630', '2021-06-13 20:53:49.574', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (43, 'go-admin/app/admin/apis.SysMenu.GetMenuIDS-fm', '获取角色对应的菜单id数组【废弃】', '/api/v1/menuids', 'SYS', 'GET', '2021-05-13 19:59:02.675', '2021-06-03 22:39:52.500', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (44, 'go-admin/app/admin/apis.SysRole.GetPage-fm', '角色列表', '/api/v1/role', 'BUS', 'GET', '2021-05-13 19:59:02.720', '2023-08-20 13:21:46.383', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (44, 'go-admin/app/admin/apis.SysRole.GetPage-fm', '角色列表', '/api/v1/role', 'BUS', 'GET', '2021-05-13 19:59:02.720', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (45, 'go-admin/app/admin/apis.SysMenu.GetMenuTreeSelect-fm', '菜单权限列表【角色配菜单使用】', '/api/v1/roleMenuTreeselect/:roleId', 'SYS', 'GET', '2021-05-13 19:59:02.762', '2023-08-20 13:21:46.383', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (46, 'go-admin/app/admin/apis.SysDept.GetDeptTreeRoleSelect-fm', '角色部门结构树【自定义数据权限】', '/api/v1/roleDeptTreeselect/:roleId', 'SYS', 'GET', '2021-05-13 19:59:02.809', '2023-08-20 13:21:46.383', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (47, 'go-admin/app/admin/apis.SysRole.Get-fm', '角色通过id获取', '/api/v1/role/:id', 'BUS', 'GET', '2021-05-13 19:59:02.850', '2023-08-20 13:21:46.383', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (47, 'go-admin/app/admin/apis.SysRole.Get-fm', '角色通过id获取', '/api/v1/role/:id', 'BUS', 'GET', '2021-05-13 19:59:02.850', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (48, 'github.com/go-admin-team/go-admin-core/sdk/pkg/jwtauth.(*GinJWTMiddleware).RefreshHandler-fm', '刷新token', '/api/v1/refresh_token', 'SYS', 'GET', '2021-05-13 19:59:02.892', '2021-06-13 20:53:49.278', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (53, 'go-admin/app/admin/apis.SysConfig.GetPage-fm', '参数列表', '/api/v1/config', 'BUS', 'GET', '2021-05-13 19:59:03.116', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (54, 'go-admin/app/admin/apis.SysConfig.Get-fm', '参数通过id获取', '/api/v1/config/:id', 'BUS', 'GET', '2021-05-13 19:59:03.157', '2021-06-17 11:48:40.732', NULL, 0, 0);
@@ -103,7 +103,7 @@ INSERT INTO `sys_api` VALUES (86, 'go-admin/common/middleware/handler.LogOut', '
 INSERT INTO `sys_api` VALUES (87, 'go-admin/app/admin/apis.SysConfig.Insert-fm', '参数创建', '/api/v1/config', 'BUS', 'POST', '2021-05-13 19:59:04.685', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (88, 'go-admin/app/admin/apis.SysMenu.Insert-fm', '菜单创建', '/api/v1/menu', 'BUS', 'POST', '2021-05-13 19:59:04.777', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (89, 'go-admin/app/admin/apis.SysPost.Insert-fm', '岗位创建', '/api/v1/post', 'BUS', 'POST', '2021-05-13 19:59:04.886', '2021-06-17 11:48:40.732', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (90, 'go-admin/app/admin/apis.SysRole.Insert-fm', '角色创建', '/api/v1/role', 'BUS', 'POST', '2021-05-13 19:59:04.975', '2023-08-20 13:21:46.383', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (90, 'go-admin/app/admin/apis.SysRole.Insert-fm', '角色创建', '/api/v1/role', 'BUS', 'POST', '2021-05-13 19:59:04.975', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (91, 'go-admin/app/admin/apis.SysUser.InsetAvatar-fm', '*用户头像编辑', '/api/v1/user/avatar', 'SYS', 'POST', '2021-05-13 19:59:05.058', '2021-06-13 20:53:51.079', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (92, 'go-admin/app/admin/apis.SysApi.Update-fm', '接口编辑', '/api/v1/sys-api/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.122', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (95, 'go-admin/common/actions.UpdateAction.func1', '分类编辑', '/api/v1/syscategory/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.255', '2021-06-13 20:53:51.247', NULL, 0, 0);
@@ -114,7 +114,7 @@ INSERT INTO `sys_api` VALUES (102, 'go-admin/app/admin/apis.SysDictType.Update-f
 INSERT INTO `sys_api` VALUES (103, 'go-admin/app/admin/apis.SysDept.Update-fm', '部门编辑', '/api/v1/dept/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.613', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (104, 'go-admin/app/other/apis.SysFileDir.Update-fm', '文件夹编辑', '/api/v1/file-dir/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.662', '2021-06-13 20:53:51.847', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (105, 'go-admin/app/other/apis.SysFileInfo.Update-fm', '文件编辑', '/api/v1/file-info/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.709', '2021-06-13 20:53:51.892', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (106, 'go-admin/app/admin/apis.SysRole.Update-fm', '角色编辑', '/api/v1/role/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.752', '2023-08-20 13:21:46.383', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (106, 'go-admin/app/admin/apis.SysRole.Update-fm', '角色编辑', '/api/v1/role/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.752', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (107, 'go-admin/app/admin/apis.SysRole.Update2DataScope-fm', '角色数据权限修改', '/api/v1/roledatascope', 'BUS', 'PUT', '2021-05-13 19:59:05.803', '2023-08-20 13:21:46.383', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (108, 'go-admin/app/admin/apis.SysConfig.Update-fm', '参数编辑', '/api/v1/config/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.848', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (109, 'go-admin/app/admin/apis.SysMenu.Update-fm', '编辑菜单', '/api/v1/menu/:id', 'BUS', 'PUT', '2021-05-13 19:59:05.891', '2021-06-17 11:48:40.732', NULL, 0, 0);
@@ -145,8 +145,8 @@ INSERT INTO `sys_api` VALUES (137, 'go-admin/app/admin/apis.SysLoginLog.GetPage-
 INSERT INTO `sys_api` VALUES (138, 'go-admin/app/other/apis.File.UploadFile-fm', '文件上传', '/api/v1/public/uploadFile', 'SYS', 'POST', '2021-05-25 19:16:18.493', '2021-06-13 20:53:50.866', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (139, 'go-admin/app/admin/apis.SysConfig.Update2Set-fm', '参数信息修改【参数配置】', '/api/v1/set-config', 'BUS', 'PUT', '2021-05-27 09:45:14.853', '2021-06-17 11:48:40.732', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (140, 'go-admin/app/admin/apis.SysConfig.Get2Set-fm', '参数获取全部【配置使用】', '/api/v1/set-config', 'BUS', 'GET', '2021-05-27 11:54:14.384', '2021-06-17 11:48:40.732', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (141, 'go-admin/app/admin/apis.SysUser.GetPage-fm', '管理员列表', '/api/v1/sys-user', 'BUS', 'GET', '2021-06-13 19:24:57.111', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (142, 'go-admin/app/admin/apis.SysUser.Get-fm', '管理员通过id获取', '/api/v1/sys-user/:id', 'BUS', 'GET', '2021-06-13 19:24:57.188', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (141, 'go-admin/app/admin/apis.SysUser.GetPage-fm', '管理员列表', '/api/v1/sys-user', 'BUS', 'GET', '2021-06-13 19:24:57.111', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (142, 'go-admin/app/admin/apis.SysUser.Get-fm', '管理员通过id获取', '/api/v1/sys-user/:id', 'BUS', 'GET', '2021-06-13 19:24:57.188', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (143, 'go-admin/app/admin/apis/tools.(*SysTable).GetSysTablesInfo-fm', '', '/api/v1/sys/tables/info', '', 'GET', '2021-06-13 19:24:57.437', '2021-06-13 20:53:48.047', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (144, 'go-admin/app/admin/apis/tools.(*SysTable).GetSysTables-fm', '', '/api/v1/sys/tables/info/:tableId', '', 'GET', '2021-06-13 19:24:57.510', '2021-06-13 20:53:48.088', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (145, 'go-admin/app/admin/apis/tools.(*SysTable).GetSysTableList-fm', '', '/api/v1/sys/tables/page', '', 'GET', '2021-06-13 19:24:57.582', '2021-06-13 20:53:48.128', NULL, 0, 0);
@@ -154,42 +154,54 @@ INSERT INTO `sys_api` VALUES (146, 'github.com/gin-gonic/gin.(*RouterGroup).crea
 INSERT INTO `sys_api` VALUES (147, 'github.com/swaggo/gin-swagger.CustomWrapHandler.func1', '', '/swagger/*any', '', 'GET', '2021-06-13 19:24:59.713', '2021-06-13 20:53:50.123', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (148, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/form-generator/*filepath', '', 'GET', '2021-06-13 19:24:59.914', '2021-06-13 20:53:50.295', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (149, 'go-admin/app/admin/apis/tools.(*SysTable).InsertSysTable-fm', '', '/api/v1/sys/tables/info', '', 'POST', '2021-06-13 19:25:00.163', '2021-06-13 20:53:50.539', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (150, 'go-admin/app/admin/apis.SysUser.Insert-fm', '管理员创建', '/api/v1/sys-user', 'BUS', 'POST', '2021-06-13 19:25:00.233', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (151, 'go-admin/app/admin/apis.SysUser.Update-fm', '管理员编辑', '/api/v1/sys-user', 'BUS', 'PUT', '2021-06-13 19:25:00.986', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (150, 'go-admin/app/admin/apis.SysUser.Insert-fm', '管理员创建', '/api/v1/sys-user', 'BUS', 'POST', '2021-06-13 19:25:00.233', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (151, 'go-admin/app/admin/apis.SysUser.Update-fm', '管理员编辑', '/api/v1/sys-user', 'BUS', 'PUT', '2021-06-13 19:25:00.986', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (152, 'go-admin/app/admin/apis/tools.(*SysTable).UpdateSysTable-fm', '', '/api/v1/sys/tables/info', '', 'PUT', '2021-06-13 19:25:01.149', '2021-06-13 20:53:51.375', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (153, 'go-admin/app/admin/apis.SysRole.Update2Status-fm', '', '/api/v1/role-status', '', 'PUT', '2021-06-13 19:25:01.446', '2021-06-13 20:53:51.636', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (154, 'go-admin/app/admin/apis.SysUser.ResetPwd-fm', '修改管理员密码', '/api/v1/user/pwd/reset', 'BUS', 'PUT', '2021-06-13 19:25:01.601', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (154, 'go-admin/app/admin/apis.SysUser.ResetPwd-fm', '修改管理员密码', '/api/v1/user/pwd/reset', 'BUS', 'PUT', '2021-06-13 19:25:01.601', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (155, 'go-admin/app/admin/apis.SysUser.UpdateStatus-fm', '', '/api/v1/user/status', '', 'PUT', '2021-06-13 19:25:01.671', '2021-06-13 20:53:51.806', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (156, 'go-admin/app/admin/apis.SysUser.Delete-fm', '管理员删除', '/api/v1/sys-user', 'BUS', 'DELETE', '2021-06-13 19:25:02.043', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (156, 'go-admin/app/admin/apis.SysUser.Delete-fm', '管理员删除', '/api/v1/sys-user', 'BUS', 'DELETE', '2021-06-13 19:25:02.043', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (157, 'go-admin/app/admin/apis/tools.(*SysTable).DeleteSysTables-fm', '', '/api/v1/sys/tables/info/:tableId', '', 'DELETE', '2021-06-13 19:25:02.283', '2021-06-13 20:53:52.367', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (158, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/static/*filepath', '', 'HEAD', '2021-06-13 19:25:02.734', '2021-06-13 20:53:52.791', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (159, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/form-generator/*filepath', '', 'HEAD', '2021-06-13 19:25:02.808', '2021-06-13 20:53:52.838', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (160, 'go-admin/app/vpn/apis.VpnCommon.AgentConfig-fm', '', '/api/v1/vpn-common/agentConfig/:serverId', '', 'GET', '2023-08-20 13:36:15.677', '2023-08-20 13:36:15.677', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (161, 'go-admin/app/vpn/apis.VpnCommon.AgentSh-fm', '', '/api/v1/vpn-common/agentSh/:serverId', '', 'GET', '2023-08-20 13:36:15.681', '2023-08-20 13:36:15.681', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (162, 'go-admin/app/vpn/apis.VpnServer.Config-fm', '', '/api/v1/vpn-config/:serverId', '', 'GET', '2023-08-20 13:36:15.683', '2023-08-20 13:36:15.683', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (163, 'go-admin/app/vpn/apis.VpnNode.GetPage-fm', 'vpn节点列表', '/api/v1/vpn-node', 'BUS', 'GET', '2023-08-20 13:36:15.684', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (164, 'go-admin/app/vpn/apis.VpnNode.Get-fm', 'vpn节点查询', '/api/v1/vpn-node/:id', 'BUS', 'GET', '2023-08-20 13:36:15.686', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (165, 'go-admin/app/vpn/apis.VpnServer.GetPage-fm', 'vpn服务器列表', '/api/v1/vpn-server', 'BUS', 'GET', '2023-08-20 13:36:15.688', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (166, 'go-admin/app/vpn/apis.VpnServer.Get-fm', 'vpn节点查询', '/api/v1/vpn-server/:id', 'BUS', 'GET', '2023-08-20 13:36:15.689', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (163, 'go-admin/app/vpn/apis.VpnNode.GetPage-fm', 'vpn节点列表', '/api/v1/vpn-node', 'BUS', 'GET', '2023-08-20 13:36:15.684', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (164, 'go-admin/app/vpn/apis.VpnNode.Get-fm', 'vpn节点查询', '/api/v1/vpn-node/:id', 'BUS', 'GET', '2023-08-20 13:36:15.686', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (165, 'go-admin/app/vpn/apis.VpnServer.GetPage-fm', 'vpn服务器列表', '/api/v1/vpn-server', 'BUS', 'GET', '2023-08-20 13:36:15.688', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (166, 'go-admin/app/vpn/apis.VpnServer.Get-fm', 'vpn节点查询', '/api/v1/vpn-server/:id', 'BUS', 'GET', '2023-08-20 13:36:15.689', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (167, 'go-admin/app/admin/apis.System.GenerateCaptchaHandler-fm', '', '/api/v1/captcha', '', 'GET', '2023-08-20 13:36:15.696', '2023-08-20 13:36:15.696', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (168, 'github.com/swaggo/gin-swagger.CustomWrapHandler.func1', '', '/swagger/admin/*any', '', 'GET', '2023-08-20 13:36:15.705', '2023-08-20 13:36:15.705', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (169, 'go-admin/app/vpn/apis.VpnServer.Insert-fm', 'vpn节点列表新增', '/api/v1/vpn-server', 'BUS', 'POST', '2023-08-20 13:36:15.709', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (170, 'go-admin/app/vpn/apis.VpnServer.GetDetails-fm', 'vpn服务器详情', '/api/v1/vpn-server/details/:id', 'BUS', 'POST', '2023-08-20 13:36:15.711', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (171, 'go-admin/app/vpn/apis.VpnServer.GetLog-fm', 'vpn服务器日志', '/api/v1/vpn-server/log/:id', 'BUS', 'POST', '2023-08-20 13:36:15.712', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (172, 'go-admin/app/vpn/apis.VpnServer.Restart-fm', 'vpn服务器重启', '/api/v1/vpn-server/restart/:id', 'BUS', 'POST', '2023-08-20 13:36:15.713', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (173, 'go-admin/app/vpn/apis.VpnNode.Insert-fm', 'vpn节点添加', '/api/v1/vpn-node', 'BUS', 'POST', '2023-08-20 13:36:15.715', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (174, 'go-admin/app/vpn/apis.VpnNode.Inserts-fm', 'vpn节点批量添加', '/api/v1/vpn-node/inserts', 'BUS', 'POST', '2023-08-20 13:36:15.717', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (169, 'go-admin/app/vpn/apis.VpnServer.Insert-fm', 'vpn节点列表新增', '/api/v1/vpn-server', 'BUS', 'POST', '2023-08-20 13:36:15.709', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (170, 'go-admin/app/vpn/apis.VpnServer.GetDetails-fm', 'vpn服务器详情', '/api/v1/vpn-server/details/:id', 'BUS', 'POST', '2023-08-20 13:36:15.711', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (171, 'go-admin/app/vpn/apis.VpnServer.GetLog-fm', 'vpn服务器日志', '/api/v1/vpn-server/log/:id', 'BUS', 'POST', '2023-08-20 13:36:15.712', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (172, 'go-admin/app/vpn/apis.VpnServer.Restart-fm', 'vpn服务器重启', '/api/v1/vpn-server/restart/:id', 'BUS', 'POST', '2023-08-20 13:36:15.713', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (173, 'go-admin/app/vpn/apis.VpnNode.Insert-fm', 'vpn节点添加', '/api/v1/vpn-node', 'BUS', 'POST', '2023-08-20 13:36:15.715', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (174, 'go-admin/app/vpn/apis.VpnNode.Inserts-fm', 'vpn节点批量添加', '/api/v1/vpn-node/inserts', 'BUS', 'POST', '2023-08-20 13:36:15.717', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (175, 'go-admin/app/admin/apis.SysUser.UpdatePwd-fm', '', '/api/v1/user/pwd/set', '', 'PUT', '2023-08-20 13:36:15.728', '2023-08-20 13:36:15.728', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (176, 'go-admin/app/vpn/apis.VpnNode.Update-fm', 'vpn节点编辑', '/api/v1/vpn-node/:id', 'BUS', 'PUT', '2023-08-20 13:36:15.730', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (177, 'go-admin/app/vpn/apis.VpnServer.Update-fm', 'vpn服务器编辑', '/api/v1/vpn-server/:id', 'BUS', 'PUT', '2023-08-20 13:36:15.731', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (176, 'go-admin/app/vpn/apis.VpnNode.Update-fm', 'vpn节点编辑', '/api/v1/vpn-node/:id', 'BUS', 'PUT', '2023-08-20 13:36:15.730', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (177, 'go-admin/app/vpn/apis.VpnServer.Update-fm', 'vpn服务器编辑', '/api/v1/vpn-server/:id', 'BUS', 'PUT', '2023-08-20 13:36:15.731', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (178, 'go-admin/app/admin/apis.SysDept.Delete-fm', '', '/api/v1/dept', '', 'DELETE', '2023-08-20 13:36:15.736', '2023-08-20 13:36:15.736', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (179, 'go-admin/app/vpn/apis.VpnNode.Delete-fm', 'vpn节点删除', '/api/v1/vpn-node', 'BUS', 'DELETE', '2023-08-20 13:36:15.737', '2023-08-20 19:30:06.940', NULL, 0, 0);
-INSERT INTO `sys_api` VALUES (180, 'go-admin/app/vpn/apis.VpnServer.Delete-fm', 'vpn服务器删除', '/api/v1/vpn-server', 'BUS', 'DELETE', '2023-08-20 13:36:15.739', '2023-08-20 19:30:06.940', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (179, 'go-admin/app/vpn/apis.VpnNode.Delete-fm', 'vpn节点删除', '/api/v1/vpn-node', 'BUS', 'DELETE', '2023-08-20 13:36:15.737', '2023-08-21 11:22:45.796', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (180, 'go-admin/app/vpn/apis.VpnServer.Delete-fm', 'vpn服务器删除', '/api/v1/vpn-server', 'BUS', 'DELETE', '2023-08-20 13:36:15.739', '2023-08-21 11:22:45.796', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (181, 'go-admin/app/admin/apis.SysPost.Delete-fm', '', '/api/v1/post', '', 'DELETE', '2023-08-20 13:36:15.741', '2023-08-20 13:36:15.741', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (182, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/img/*filepath', '', 'GET', '2023-08-20 17:03:26.224', '2023-08-20 17:03:26.224', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (183, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/fonts/*filepath', '', 'GET', '2023-08-20 17:03:26.229', '2023-08-20 17:03:26.229', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (184, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/js/*filepath', '', 'GET', '2023-08-20 17:03:26.231', '2023-08-20 17:03:26.231', NULL, 0, 0);
 INSERT INTO `sys_api` VALUES (185, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/css/*filepath', '', 'GET', '2023-08-20 17:03:26.231', '2023-08-20 17:03:26.231', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (186, 'github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1', '', '/v2/*filepath', '', 'GET', '2023-08-21 22:04:53.943', '2023-08-21 22:04:53.943', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (187, 'go-admin/app/vpn/apis.VpnServer.FrpcConfig-fm', '', '/api/v1/vpn-config/frpc/:serverId', '', 'GET', '2023-09-17 14:47:30.947', '2023-09-17 14:47:30.947', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (188, 'go-admin/app/vpn/apis.VpnServer.FrpsConfig-fm', '', '/api/v1/vpn-config/frps/:serverId', '', 'GET', '2023-09-17 14:47:30.955', '2023-09-17 14:47:30.955', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (189, 'go-admin/app/vpn/apis.VpnServer.XrayConfig-fm', '', '/api/v1/vpn-config/xray/:serverId', '', 'GET', '2023-09-17 14:47:30.957', '2023-09-17 14:47:30.957', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (190, 'go-admin/app/vpn/apis.VpnServer.GetPage2-fm', '', '/api/v1/vpn-server/getPage2', '', 'GET', '2023-10-20 14:58:07.598', '2023-10-20 14:58:07.598', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (191, 'go-admin/app/vpn/apis.VpnNode.Inserts2-fm', '', '/api/v1/vpn-node/inserts2', '', 'POST', '2023-10-20 14:58:07.618', '2023-10-20 14:58:07.618', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (192, 'go-admin/app/vpn/apis.VpnServer.GetServerNode-fm', '', '/api/v1/vpn-config/nodes/:serverId', '', 'GET', '2023-10-23 17:00:59.110', '2023-10-23 17:00:59.110', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (193, 'go-admin/app/vpn/apis.VpnServer.GetServerNode-fm', '', '/api/v1/vpn-config/node/:serverId', '', 'GET', '2023-10-23 17:00:59.113', '2023-10-23 17:00:59.113', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (194, 'go-admin/app/vpn/apis.VpnServer.Reboot-fm', '', '/api/v1/vpn-server2/reboot/:id', '', 'POST', '2023-10-23 17:00:59.135', '2023-10-23 17:00:59.135', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (195, 'go-admin/app/vpn/apis.VpnServer.Reboots-fm', '', '/api/v1/vpn-server2/reboots', '', 'POST', '2023-10-23 17:00:59.137', '2023-10-23 17:00:59.137', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (196, 'go-admin/app/vpn/apis.VpnServer.Restarts-fm', '', '/api/v1/vpn-server2/restarts', '', 'POST', '2023-10-23 17:00:59.139', '2023-10-23 17:00:59.139', NULL, 0, 0);
+INSERT INTO `sys_api` VALUES (197, 'go-admin/app/vpn/apis.VpnNode.Inserts2-fm', '', '/api/v1/vpn-node2/inserts2', '', 'POST', '2023-10-23 17:00:59.142', '2023-10-23 17:00:59.142', NULL, 0, 0);
 COMMIT;
 
 -- ----------------------------
@@ -209,46 +221,50 @@ CREATE TABLE `sys_casbin_rule` (
   `v7` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_sys_casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`,`v6`,`v7`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of sys_casbin_rule
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_casbin_rule` VALUES (68, 'p', 'vpn', '/api/v1/sys-user', 'DELETE', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (63, 'p', 'vpn', '/api/v1/sys-user', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (65, 'p', 'vpn', '/api/v1/sys-user', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (66, 'p', 'vpn', '/api/v1/sys-user', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (64, 'p', 'vpn', '/api/v1/sys-user/:id', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (67, 'p', 'vpn', '/api/v1/user/pwd/reset', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (82, 'p', 'vpn', '/api/v1/vpn-node', 'DELETE', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (75, 'p', 'vpn', '/api/v1/vpn-node', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (79, 'p', 'vpn', '/api/v1/vpn-node', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (76, 'p', 'vpn', '/api/v1/vpn-node/:id', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (81, 'p', 'vpn', '/api/v1/vpn-node/:id', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (80, 'p', 'vpn', '/api/v1/vpn-node/inserts', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (74, 'p', 'vpn', '/api/v1/vpn-server', 'DELETE', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (69, 'p', 'vpn', '/api/v1/vpn-server', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (78, 'p', 'vpn', '/api/v1/vpn-server', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (77, 'p', 'vpn', '/api/v1/vpn-server/:id', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (73, 'p', 'vpn', '/api/v1/vpn-server/:id', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (70, 'p', 'vpn', '/api/v1/vpn-server/details/:id', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (71, 'p', 'vpn', '/api/v1/vpn-server/log/:id', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (72, 'p', 'vpn', '/api/v1/vpn-server/restart/:id', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (61, 'p', 'vpnUser', '/api/v1/vpn-node', 'DELETE', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (49, 'p', 'vpnUser', '/api/v1/vpn-node', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (57, 'p', 'vpnUser', '/api/v1/vpn-node', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (50, 'p', 'vpnUser', '/api/v1/vpn-node/:id', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (59, 'p', 'vpnUser', '/api/v1/vpn-node/:id', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (58, 'p', 'vpnUser', '/api/v1/vpn-node/inserts', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (62, 'p', 'vpnUser', '/api/v1/vpn-server', 'DELETE', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (51, 'p', 'vpnUser', '/api/v1/vpn-server', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (53, 'p', 'vpnUser', '/api/v1/vpn-server', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (52, 'p', 'vpnUser', '/api/v1/vpn-server/:id', 'GET', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (60, 'p', 'vpnUser', '/api/v1/vpn-server/:id', 'PUT', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (54, 'p', 'vpnUser', '/api/v1/vpn-server/details/:id', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (55, 'p', 'vpnUser', '/api/v1/vpn-server/log/:id', 'POST', '', '', '', '', '');
-INSERT INTO `sys_casbin_rule` VALUES (56, 'p', 'vpnUser', '/api/v1/vpn-server/restart/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (103, 'p', 'vpn', '/api/v1/role', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (105, 'p', 'vpn', '/api/v1/role', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (104, 'p', 'vpn', '/api/v1/role/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (106, 'p', 'vpn', '/api/v1/role/:id', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (102, 'p', 'vpn', '/api/v1/sys-user', 'DELETE', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (97, 'p', 'vpn', '/api/v1/sys-user', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (99, 'p', 'vpn', '/api/v1/sys-user', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (100, 'p', 'vpn', '/api/v1/sys-user', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (98, 'p', 'vpn', '/api/v1/sys-user/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (101, 'p', 'vpn', '/api/v1/user/pwd/reset', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (120, 'p', 'vpn', '/api/v1/vpn-node', 'DELETE', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (113, 'p', 'vpn', '/api/v1/vpn-node', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (117, 'p', 'vpn', '/api/v1/vpn-node', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (114, 'p', 'vpn', '/api/v1/vpn-node/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (119, 'p', 'vpn', '/api/v1/vpn-node/:id', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (118, 'p', 'vpn', '/api/v1/vpn-node/inserts', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (112, 'p', 'vpn', '/api/v1/vpn-server', 'DELETE', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (107, 'p', 'vpn', '/api/v1/vpn-server', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (116, 'p', 'vpn', '/api/v1/vpn-server', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (115, 'p', 'vpn', '/api/v1/vpn-server/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (111, 'p', 'vpn', '/api/v1/vpn-server/:id', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (108, 'p', 'vpn', '/api/v1/vpn-server/details/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (109, 'p', 'vpn', '/api/v1/vpn-server/log/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (110, 'p', 'vpn', '/api/v1/vpn-server/restart/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (95, 'p', 'vpnUser', '/api/v1/vpn-node', 'DELETE', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (83, 'p', 'vpnUser', '/api/v1/vpn-node', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (91, 'p', 'vpnUser', '/api/v1/vpn-node', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (84, 'p', 'vpnUser', '/api/v1/vpn-node/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (93, 'p', 'vpnUser', '/api/v1/vpn-node/:id', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (92, 'p', 'vpnUser', '/api/v1/vpn-node/inserts', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (96, 'p', 'vpnUser', '/api/v1/vpn-server', 'DELETE', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (85, 'p', 'vpnUser', '/api/v1/vpn-server', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (87, 'p', 'vpnUser', '/api/v1/vpn-server', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (86, 'p', 'vpnUser', '/api/v1/vpn-server/:id', 'GET', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (94, 'p', 'vpnUser', '/api/v1/vpn-server/:id', 'PUT', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (88, 'p', 'vpnUser', '/api/v1/vpn-server/details/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (89, 'p', 'vpnUser', '/api/v1/vpn-server/log/:id', 'POST', '', '', '', '', '');
+INSERT INTO `sys_casbin_rule` VALUES (90, 'p', 'vpnUser', '/api/v1/vpn-server/restart/:id', 'POST', '', '', '', '', '');
 COMMIT;
 
 -- ----------------------------
@@ -781,12 +797,23 @@ CREATE TABLE `sys_login_log` (
   PRIMARY KEY (`id`),
   KEY `idx_sys_login_log_create_by` (`create_by`),
   KEY `idx_sys_login_log_update_by` (`update_by`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of sys_login_log
 -- ----------------------------
 BEGIN;
+INSERT INTO `sys_login_log` VALUES (1, '', '1', '::1', '', 'Chrome 115.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-08-26 19:04:56', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '登录失败', '2023-08-26 19:04:56.486', '2023-08-26 19:04:56.486', 0, 0);
+INSERT INTO `sys_login_log` VALUES (2, 'yoyoyo', '2', '::1', '', 'Chrome 115.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-08-26 19:05:15', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '登录成功', '2023-08-26 19:05:14.949', '2023-08-26 19:05:14.949', 0, 0);
+INSERT INTO `sys_login_log` VALUES (3, 'yoyoyo', '2', '127.0.0.1', '', 'Chrome 116.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-14 10:31:22', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', '登录成功', '2023-09-14 10:31:21.845', '2023-09-14 10:31:21.845', 0, 0);
+INSERT INTO `sys_login_log` VALUES (4, 'yoyoyo', '2', '::1', '', 'Chrome 116.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-14 11:32:53', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', '退出成功', '2023-09-14 11:32:52.501', '2023-09-14 11:32:52.501', 0, 0);
+INSERT INTO `sys_login_log` VALUES (5, 'ceshi1', '2', '::1', '', 'Chrome 116.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-14 11:33:00', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', '登录成功', '2023-09-14 11:32:59.769', '2023-09-14 11:32:59.769', 0, 0);
+INSERT INTO `sys_login_log` VALUES (6, 'yoyoyo', '2', '127.0.0.1', '', 'Chrome 117.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-17 14:51:57', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36', '登录成功', '2023-09-17 14:51:57.105', '2023-09-17 14:51:57.105', 0, 0);
+INSERT INTO `sys_login_log` VALUES (7, '', '1', '::1', '', 'Chrome 117.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-20 10:29:08', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36', '登录失败', '2023-09-20 10:29:08.102', '2023-09-20 10:29:08.102', 0, 0);
+INSERT INTO `sys_login_log` VALUES (8, 'yoyoyo', '2', '::1', '', 'Chrome 117.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-09-20 10:29:21', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36', '登录成功', '2023-09-20 10:29:21.099', '2023-09-20 10:29:21.099', 0, 0);
+INSERT INTO `sys_login_log` VALUES (9, '', '1', '::1', '', 'Chrome 118.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-10-23 20:38:50', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', '登录失败', '2023-10-23 20:38:50.405', '2023-10-23 20:38:50.405', 0, 0);
+INSERT INTO `sys_login_log` VALUES (10, 'yoyoyo', '2', '::1', '', 'Chrome 118.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-10-23 20:39:12', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', '登录成功', '2023-10-23 20:39:12.013', '2023-10-23 20:39:12.013', 0, 0);
+INSERT INTO `sys_login_log` VALUES (11, 'yoyoyo', '2', '::1', '', 'Chrome 118.0.0.0', 'Intel Mac OS X 10_15_7', 'Macintosh', '2023-10-23 20:58:06', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', '登录成功', '2023-10-23 20:58:05.949', '2023-10-23 20:58:05.949', 0, 0);
 COMMIT;
 
 -- ----------------------------
@@ -826,11 +853,11 @@ CREATE TABLE `sys_menu` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `sys_menu` VALUES (2, 'Admin', '系统管理', 'api-server', '/admin', '/0/2', 'M', '无', '', 0, 1, '', 'Layout', 10, '0', '1', 0, 1, '2021-05-20 21:58:45.679', '2023-08-10 14:44:19.543', NULL);
-INSERT INTO `sys_menu` VALUES (3, 'SysUserManage', '用户管理', 'user', '/admin/sys-user', '/0/2/3', 'C', '无', 'admin:sysUser:list', 2, 0, '', '/admin/sys-user/index', 10, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (43, '', '新增管理员', 'app-group-fill', '', '/0/2/3/43', 'F', 'POST', 'admin:sysUser:add', 3, 0, '', '', 10, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (44, '', '查询管理员', 'app-group-fill', '', '/0/2/3/44', 'F', 'GET', 'admin:sysUser:query', 3, 0, '', '', 40, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (45, '', '修改管理员', 'app-group-fill', '', '/0/2/3/45', 'F', 'PUT', 'admin:sysUser:edit', 3, 0, '', '', 30, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (46, '', '删除管理员', 'app-group-fill', '', '/0/2/3/46', 'F', 'DELETE', 'admin:sysUser:remove', 3, 0, '', '', 20, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 19:30:06.938', NULL);
+INSERT INTO `sys_menu` VALUES (3, 'SysUserManage', '用户管理', 'user', '/admin/sys-user', '/0/2/3', 'C', '无', 'admin:sysUser:list', 2, 0, '', '/admin/sys-user/index', 10, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (43, '', '新增管理员', 'app-group-fill', '', '/0/2/3/43', 'F', 'POST', 'admin:sysUser:add', 3, 0, '', '', 10, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (44, '', '查询管理员', 'app-group-fill', '', '/0/2/3/44', 'F', 'GET', 'admin:sysUser:query', 3, 0, '', '', 40, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (45, '', '修改管理员', 'app-group-fill', '', '/0/2/3/45', 'F', 'PUT', 'admin:sysUser:edit', 3, 0, '', '', 30, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (46, '', '删除管理员', 'app-group-fill', '', '/0/2/3/46', 'F', 'DELETE', 'admin:sysUser:remove', 3, 0, '', '', 20, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-21 11:22:45.793', NULL);
 INSERT INTO `sys_menu` VALUES (51, 'SysMenuManage', '菜单管理', 'tree-table', '/admin/sys-menu', '/0/2/51', 'C', '无', 'admin:sysMenu:list', 2, 1, '', '/admin/sys-menu/index', 30, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-10 14:44:19.547', NULL);
 INSERT INTO `sys_menu` VALUES (52, 'SysRoleManage', '角色管理', 'peoples', '/admin/sys-role', '/0/2/52', 'C', '无', 'admin:sysRole:list', 2, 1, '', '/admin/sys-role/index', 20, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-20 13:21:46.382', NULL);
 INSERT INTO `sys_menu` VALUES (56, 'SysDeptManage', '部门管理', 'tree', '/admin/sys-dept', '/0/2/56', 'C', '无', 'admin:sysDept:list', 2, 0, '', '/admin/sys-dept/index', 40, '0', '1', 0, 1, '2021-05-20 22:08:44.526', '2023-08-10 14:44:19.549', NULL);
@@ -929,22 +956,22 @@ INSERT INTO `sys_menu` VALUES (576, '', '创建节点管理', '', 'vpn_node', '/
 INSERT INTO `sys_menu` VALUES (577, '', '修改节点管理', '', 'vpn_node', '/0/573/574/577', 'F', '无', 'vpn:vpnNode:edit', 574, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:38:48.375', '2023-08-10 19:38:48.376', NULL);
 INSERT INTO `sys_menu` VALUES (578, '', '删除节点管理', '', 'vpn_node', '/0/573/574/578', 'F', '无', 'vpn:vpnNode:remove', 574, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:38:48.377', '2023-08-10 19:38:48.378', NULL);
 INSERT INTO `sys_menu` VALUES (579, '', '服务器管理', 'pass', '/vpn-server', '/0/579', 'M', '无', '', 0, 0, '', 'Layout', 0, '0', '0', 1, 0, '2023-08-10 19:56:53.111', '2023-08-10 19:56:53.113', '2023-08-20 11:37:23.540');
-INSERT INTO `sys_menu` VALUES (580, 'VpnServerManage', '服务器管理', 'pass', '/vpn/vpn-server', '/0/579/580', 'C', '无', 'vpn:vpnServer:list', 0, 0, '', '/vpn/vpn-server/index', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.114', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (581, '', '分页获取服务器管理', '', 'vpn_server', '/0/579/580/581', 'F', '无', 'vpn:vpnServer:query', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.117', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (582, '', '创建服务器管理', '', 'vpn_server', '/0/579/580/582', 'F', '无', 'vpn:vpnServer:add', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.119', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (583, '', '修改服务器管理', '', 'vpn_server', '/0/579/580/583', 'F', '无', 'vpn:vpnServer:edit', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.121', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (584, '', '删除服务器管理', '', 'vpn_server', '/0/579/580/584', 'F', '无', 'vpn:vpnServer:remove', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.123', '2023-08-20 19:30:06.938', NULL);
+INSERT INTO `sys_menu` VALUES (580, 'VpnServerManage', '服务器管理', 'pass', '/vpn/vpn-server', '/0/579/580', 'C', '无', 'vpn:vpnServer:list', 0, 0, '', '/vpn/vpn-server/index', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.114', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (581, '', '分页获取服务器管理', '', 'vpn_server', '/0/579/580/581', 'F', '无', 'vpn:vpnServer:query', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.117', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (582, '', '创建服务器管理', '', 'vpn_server', '/0/579/580/582', 'F', '无', 'vpn:vpnServer:add', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.119', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (583, '', '修改服务器管理', '', 'vpn_server', '/0/579/580/583', 'F', '无', 'vpn:vpnServer:edit', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.121', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (584, '', '删除服务器管理', '', 'vpn_server', '/0/579/580/584', 'F', '无', 'vpn:vpnServer:remove', 580, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:53.123', '2023-08-21 11:22:45.793', NULL);
 INSERT INTO `sys_menu` VALUES (585, '', '节点管理', 'pass', '/vpn-node', '/0/585', 'M', '无', '', 0, 0, '', 'Layout', 0, '0', '0', 1, 0, '2023-08-10 19:56:55.100', '2023-08-10 19:56:55.101', '2023-08-20 11:37:37.583');
-INSERT INTO `sys_menu` VALUES (586, 'VpnNodeManage', '节点管理', 'pass', '/vpn/vpn-node', '/0/585/586', 'C', '无', 'vpn:vpnNode:list', 0, 0, '', '/vpn/vpn-node/index', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.104', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (587, '', '分页获取节点管理', '', 'vpn_node', '/0/585/586/587', 'F', '无', 'vpn:vpnNode:query', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.107', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (588, '', '创建节点管理', '', 'vpn_node', '/0/585/586/588', 'F', '无', 'vpn:vpnNode:add', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.110', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (589, '', '修改节点管理', '', 'vpn_node', '/0/585/586/589', 'F', '无', 'vpn:vpnNode:edit', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.113', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (590, '', '删除节点管理', '', 'vpn_node', '/0/585/586/590', 'F', '无', 'vpn:vpnNode:remove', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.115', '2023-08-20 19:30:06.938', NULL);
-INSERT INTO `sys_menu` VALUES (591, 'VpnUserNodeManage', 'VPN节点', 'intel', '/vpn/vpn-node-user', '/0/591', 'C', '', 'vpnUser:vpnNode:list', 0, 0, '', '/vpn/vpn-node-user/index', 0, '0', '1', 1, 1, '2023-08-20 14:01:45.680', '2023-08-20 14:06:45.348', NULL);
-INSERT INTO `sys_menu` VALUES (592, '分页获取节点管理', '分页获取节点管理', '', '', '/0/591/592', 'F', '', 'vpnUser:vpnNode:query', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:07:57.409', '2023-08-20 14:08:18.051', NULL);
-INSERT INTO `sys_menu` VALUES (593, '', '修改节点管理', '', '', '/0/591/593', 'F', '', 'vpnUser:vpnNode:edit', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:08:42.349', '2023-08-20 14:09:01.558', NULL);
-INSERT INTO `sys_menu` VALUES (594, '', '删除节点管理', '', '', '/0/591/594', 'F', '', 'vpnUser:vpnNode:remove', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:09:28.593', '2023-08-20 14:09:40.376', NULL);
-INSERT INTO `sys_menu` VALUES (595, 'admin:sysUser:resetPassword', '重置密码', 'app-group-fill', '', '/0/2/3/595', 'F', '', 'admin:sysUser:resetPassword', 3, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 19:22:33.539', '2023-08-20 19:30:06.938', NULL);
+INSERT INTO `sys_menu` VALUES (586, 'VpnNodeManage', '节点管理', 'pass', '/vpn/vpn-node', '/0/585/586', 'C', '无', 'vpn:vpnNode:list', 0, 0, '', '/vpn/vpn-node/index', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.104', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (587, '', '分页获取节点管理', '', 'vpn_node', '/0/585/586/587', 'F', '无', 'vpn:vpnNode:query', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.107', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (588, '', '创建节点管理', '', 'vpn_node', '/0/585/586/588', 'F', '无', 'vpn:vpnNode:add', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.110', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (589, '', '修改节点管理', '', 'vpn_node', '/0/585/586/589', 'F', '无', 'vpn:vpnNode:edit', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.113', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (590, '', '删除节点管理', '', 'vpn_node', '/0/585/586/590', 'F', '无', 'vpn:vpnNode:remove', 586, 0, '', '', 0, '0', '0', 1, 1, '2023-08-10 19:56:55.115', '2023-08-21 11:22:45.793', NULL);
+INSERT INTO `sys_menu` VALUES (591, 'VpnUserNodeManage', 'VPN节点', 'intel', '/vpn/vpn-node-user', '/0/591', 'C', '', 'vpnUser:vpnNode:list', 0, 0, '', '/vpn/vpn-node-user/index', 0, '0', '1', 1, 1, '2023-08-20 14:01:45.680', '2023-08-21 11:22:34.803', NULL);
+INSERT INTO `sys_menu` VALUES (592, '分页获取节点管理', '分页获取节点管理', '', '', '/0/591/592', 'F', '', 'vpnUser:vpnNode:query', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:07:57.409', '2023-08-21 11:22:34.803', NULL);
+INSERT INTO `sys_menu` VALUES (593, '', '修改节点管理', '', '', '/0/591/593', 'F', '', 'vpnUser:vpnNode:edit', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:08:42.349', '2023-08-21 11:22:34.803', NULL);
+INSERT INTO `sys_menu` VALUES (594, '', '删除节点管理', '', '', '/0/591/594', 'F', '', 'vpnUser:vpnNode:remove', 591, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 14:09:28.593', '2023-08-21 11:22:34.803', NULL);
+INSERT INTO `sys_menu` VALUES (595, 'admin:sysUser:resetPassword', '重置密码', 'app-group-fill', '', '/0/2/3/595', 'F', '', 'admin:sysUser:resetPassword', 3, 0, '', '', 0, '0', '1', 1, 1, '2023-08-20 19:22:33.539', '2023-08-21 11:22:45.793', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -981,10 +1008,14 @@ INSERT INTO `sys_menu_api_rule` VALUES (226, 29);
 INSERT INTO `sys_menu_api_rule` VALUES (51, 39);
 INSERT INTO `sys_menu_api_rule` VALUES (222, 39);
 INSERT INTO `sys_menu_api_rule` VALUES (221, 41);
+INSERT INTO `sys_menu_api_rule` VALUES (43, 44);
+INSERT INTO `sys_menu_api_rule` VALUES (45, 44);
 INSERT INTO `sys_menu_api_rule` VALUES (52, 44);
 INSERT INTO `sys_menu_api_rule` VALUES (225, 44);
 INSERT INTO `sys_menu_api_rule` VALUES (226, 45);
 INSERT INTO `sys_menu_api_rule` VALUES (226, 46);
+INSERT INTO `sys_menu_api_rule` VALUES (43, 47);
+INSERT INTO `sys_menu_api_rule` VALUES (45, 47);
 INSERT INTO `sys_menu_api_rule` VALUES (226, 47);
 INSERT INTO `sys_menu_api_rule` VALUES (62, 53);
 INSERT INTO `sys_menu_api_rule` VALUES (244, 53);
@@ -998,11 +1029,13 @@ INSERT INTO `sys_menu_api_rule` VALUES (229, 82);
 INSERT INTO `sys_menu_api_rule` VALUES (245, 87);
 INSERT INTO `sys_menu_api_rule` VALUES (220, 88);
 INSERT INTO `sys_menu_api_rule` VALUES (233, 89);
+INSERT INTO `sys_menu_api_rule` VALUES (43, 90);
 INSERT INTO `sys_menu_api_rule` VALUES (224, 90);
 INSERT INTO `sys_menu_api_rule` VALUES (531, 92);
 INSERT INTO `sys_menu_api_rule` VALUES (242, 101);
 INSERT INTO `sys_menu_api_rule` VALUES (238, 102);
 INSERT INTO `sys_menu_api_rule` VALUES (230, 103);
+INSERT INTO `sys_menu_api_rule` VALUES (43, 106);
 INSERT INTO `sys_menu_api_rule` VALUES (226, 106);
 INSERT INTO `sys_menu_api_rule` VALUES (226, 107);
 INSERT INTO `sys_menu_api_rule` VALUES (246, 108);
@@ -1117,7 +1150,7 @@ CREATE TABLE `sys_opera_log` (
   PRIMARY KEY (`id`),
   KEY `idx_sys_opera_log_create_by` (`create_by`),
   KEY `idx_sys_opera_log_update_by` (`update_by`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2888 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of sys_opera_log
@@ -1188,8 +1221,8 @@ BEGIN;
 INSERT INTO `sys_role` VALUES (1, '系统管理员', '2', 'admin', 1, '', '', 1, '', 1, 1, '2021-05-13 19:56:37.913', '2021-05-13 19:56:37.913', NULL);
 INSERT INTO `sys_role` VALUES (2, '管理', '2', 'admin1', 0, '', '', 0, '1', 0, 0, '2023-08-20 12:52:47.053', '2023-08-20 13:45:12.523', '2023-08-20 13:51:33.126');
 INSERT INTO `sys_role` VALUES (3, '用户', '2', 'user', 0, '', '', 0, '5', 0, 0, '2023-08-20 12:55:52.402', '2023-08-20 13:45:15.304', '2023-08-20 13:51:35.105');
-INSERT INTO `sys_role` VALUES (4, '管理', '2', 'vpn', 0, '', '', 0, '1', 0, 0, '2023-08-20 13:52:29.588', '2023-08-20 19:30:06.937', NULL);
-INSERT INTO `sys_role` VALUES (5, 'vpnUser', '2', 'vpnUser', 0, '', '', 0, '', 0, 0, '2023-08-20 13:56:33.911', '2023-08-20 14:06:45.346', NULL);
+INSERT INTO `sys_role` VALUES (4, '管理', '2', 'vpn', 0, '', '', 0, '1', 0, 0, '2023-08-20 13:52:29.588', '2023-08-21 11:22:45.791', NULL);
+INSERT INTO `sys_role` VALUES (5, 'vpnUser', '2', 'vpnUser', 0, '', '', 0, '', 0, 0, '2023-08-20 13:56:33.911', '2023-08-21 11:22:34.802', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -1241,6 +1274,9 @@ INSERT INTO `sys_role_menu` VALUES (4, 588);
 INSERT INTO `sys_role_menu` VALUES (4, 589);
 INSERT INTO `sys_role_menu` VALUES (4, 590);
 INSERT INTO `sys_role_menu` VALUES (5, 591);
+INSERT INTO `sys_role_menu` VALUES (5, 592);
+INSERT INTO `sys_role_menu` VALUES (5, 593);
+INSERT INTO `sys_role_menu` VALUES (5, 594);
 INSERT INTO `sys_role_menu` VALUES (4, 595);
 COMMIT;
 
@@ -1325,16 +1361,17 @@ CREATE TABLE `sys_user` (
   KEY `idx_sys_user_create_by` (`create_by`),
   KEY `idx_sys_user_update_by` (`update_by`),
   KEY `idx_sys_user_deleted_at` (`deleted_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_user` VALUES (1, 'zhangwj', '$2a$10$suAOz/fTKy4MOdKxDLOCa.IoJSOIQNdBS2iC.1IUyp9/BPGPVZhES', 'zhangwj', '13818888888', 1, '', '', '1', '1@qq.com', 1, 1, '1', '2', 1, 1, '2021-05-13 19:56:37.914', '2023-08-20 19:31:11.952', NULL);
+INSERT INTO `sys_user` VALUES (1, 'zhangwj', '$2a$10$ifu6NR9zhTBq5pGRY1xXAuPXTUS8zcPAtg.tXYdVq57PkIYFMiTym', 'zhangwj', '13818888888', 1, '', '', '1', '1@qq.com', 1, 1, '1', '2', 1, 1, '2021-05-13 19:56:37.914', '2023-08-26 19:05:36.796', NULL);
 INSERT INTO `sys_user` VALUES (2, 'xiaobai', '$2a$10$.7.h2b2mVaLnLHd.BU7x1.9sey6QtFVxvqCMNyy6KK/btSmk1f8oy', 'xiaobai', '13733345677', 2, '', '', '0', 'xiaobai@gmail.com', 1, 1, '', '2', 1, 0, '2023-08-20 13:08:47.311', '2023-08-20 13:10:17.387', '2023-08-20 13:55:15.951');
 INSERT INTO `sys_user` VALUES (3, 'yoyoyo', '$2a$10$hnHHR5O2FG0HHBeh/bgpLebLQFjZcIxJRZoq1hRgjUgUfgmn07wLy', 'yoyoyo', '13556677766', 4, '', '', '', 'yoyoyo@gmail.com', 1, 0, '', '2', 1, 0, '2023-08-20 13:55:09.779', '2023-08-20 19:31:17.467', NULL);
-INSERT INTO `sys_user` VALUES (4, 'ceshi', '$2a$10$dX6n3rajjxjZ6EzNUvZ2YedyAb6YozRMlg2X9F0N7tzenm6.LK3Pu', 'ceshi', '15655566555', 5, '', '', '', 'ceshi@gmail.com', 1, 0, '', '2', 1, 0, '2023-08-20 13:57:10.028', '2023-08-20 19:31:22.141', NULL);
+INSERT INTO `sys_user` VALUES (4, 'ceshi', '$2a$10$dX6n3rajjxjZ6EzNUvZ2YedyAb6YozRMlg2X9F0N7tzenm6.LK3Pu', 'ceshi', '15655566555', 5, '', '', '', 'ceshi@gmail.com', 1, 0, '', '2', 1, 0, '2023-08-20 13:57:10.028', '2023-08-20 19:31:22.141', '2023-08-21 11:38:23.862');
+INSERT INTO `sys_user` VALUES (5, 'ceshi1', '$2a$10$7NckTMnYkttpWKc514RcRuusg4I9MGAGnLPT3XNtpGIap8w6NyZbW', 'ceshi1', '', 5, '', '', '', 'ceshi1@gmail.com', 0, 0, 'ceshi1', '2', 3, 0, '2023-08-21 11:38:40.210', '2023-08-21 11:38:40.210', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -1361,24 +1398,14 @@ CREATE TABLE `vpn_node` (
   `deleted_at` datetime DEFAULT NULL COMMENT '删除日期',
   `create_by` bigint DEFAULT NULL COMMENT '创建者',
   `update_by` bigint DEFAULT NULL COMMENT '更新者',
+  `transit_protocol` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='节点管理';
+) ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='节点管理';
 
 -- ----------------------------
 -- Records of vpn_node
 -- ----------------------------
 BEGIN;
-INSERT INTO `vpn_node` VALUES (55, '0', '0', 11, 30649, 12, '', -1, 32369, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"eivvysxT1e\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:39:11', '2023-08-20 14:40:53', '2023-08-20 14:40:59', 0, 0);
-INSERT INTO `vpn_node` VALUES (56, '0', '0', 11, 49367, 12, '', -1, 24810, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"eivvysxT1e\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:39:43', '2023-08-20 14:40:58', '2023-08-20 14:40:59', 0, 0);
-INSERT INTO `vpn_node` VALUES (57, '0', '0', 11, 48895, 12, '54.179.155.234', 1, 31135, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"eivvysxT1e\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:39:59', '2023-08-20 14:40:58', '2023-08-20 14:40:59', 0, 0);
-INSERT INTO `vpn_node` VALUES (58, '0', '0', 11, 31941, 12, '54.179.155.234', 1, 11086, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"eivvysxT1e\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:40:05', '2023-08-20 14:40:58', '2023-08-20 14:40:59', 0, 0);
-INSERT INTO `vpn_node` VALUES (59, '0', '0', 11, 52837, 12, '54.179.155.234', 1, 44857, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"e8SL8HfDcl\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:41:24', '2023-08-20 14:45:15', '2023-08-20 14:45:21', 0, 0);
-INSERT INTO `vpn_node` VALUES (60, '0', '0', 11, 52241, 12, '54.179.155.234', 1, 14216, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"e8SL8HfDcl\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:44:57', '2023-08-20 14:45:15', '2023-08-20 14:45:21', 0, 0);
-INSERT INTO `vpn_node` VALUES (61, '0', '0', 11, 34133, 12, '54.179.155.234', 1, 11790, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"rw97xAgIWJ\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 14:45:35', '2023-08-20 15:25:50', '2023-08-20 15:25:54', 0, 0);
-INSERT INTO `vpn_node` VALUES (62, '7553', '31207', 11, 19082, 12, '54.179.155.234', 1, 36649, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"atI0wFKb6Q\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 15:26:04', '2023-08-20 15:43:39', '2023-08-20 15:43:55', 0, 0);
-INSERT INTO `vpn_node` VALUES (63, '0', '0', 11, 41088, 12, '54.179.155.234', 1, 47206, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"oW4rjARo5x\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', 1, '2023-08-20 15:44:02', '2023-08-20 15:46:47', '2023-08-20 15:46:58', 0, 0);
-INSERT INTO `vpn_node` VALUES (64, '0', '0', 11, 48996, 12, '54.179.155.234', 1, 25041, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"Ijd7s8SV6B\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', -1, '2023-08-20 15:47:06', '2023-08-20 16:16:52', '2023-08-20 16:17:00', 0, 0);
-INSERT INTO `vpn_node` VALUES (65, '532868', '1486121', 11, 31782, 12, '54.179.155.234', 1, 30554, 'shadowsocks', '{\"method\":\"aes-256-gcm\",\"network\":\"tcp,udp\",\"password\":\"NfSTYZeGMq\"}', '{\"network\":\"tcp\",\"security\":\"none\",\"tcpSettings\":{\"header\":{\"type\":\"none\"}}}', '', 1, '2023-08-20 16:17:07', '2023-08-20 19:04:11', '2023-08-20 19:04:12', 0, 0);
 COMMIT;
 
 -- ----------------------------
@@ -1396,7 +1423,7 @@ CREATE TABLE `vpn_node_other` (
   `create_by` bigint DEFAULT NULL COMMENT '创建者',
   `update_by` bigint DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='节点注释';
+) ENGINE=InnoDB AUTO_INCREMENT=299 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='节点注释';
 
 -- ----------------------------
 -- Records of vpn_node_other
@@ -1429,14 +1456,14 @@ CREATE TABLE `vpn_server` (
   `create_by` bigint DEFAULT NULL COMMENT '创建者',
   `update_by` bigint DEFAULT NULL COMMENT '更新者',
   `ips` text,
+  `transit` int DEFAULT NULL COMMENT '-1 不允许 1允许',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='服务器管理';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='服务器管理';
 
 -- ----------------------------
 -- Records of vpn_server
 -- ----------------------------
 BEGIN;
-INSERT INTO `vpn_server` VALUES (13, '[\"1\", \"3\", \"4\"]', '54.179.155.234', '54.179.155.234', 22, 'root', '', '-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAkhk5bRuVDsnI/LZsG5mP9Y0r6wTl1oLnQ75s83Dd3uTAu44w\nq4e7Esrha5CiThs1BP6L2679RyXc6xfNhvEJ2psBHtXzeXyuHwrdQE42fn81AiOE\nJ1ezkW5a3SEMPYmvQbNgxLGwRHXd0HUxEWhGID4zfoLvO4j4nhZsTEr0wUEsjI+7\nloRsvNpodsh94tgJk6oG23nn1ztHvgxbZr0Ahcji/85Z9rBFNe9udcNdjhro+o+J\nCnXjHYDYqHka0XrlZYymxAKdFAnUGfwIywODNEy/RcGf9cS+Ptb711mBGv42Uc8O\nUWuaHm9qI/pinKcnjUVzEu5dq4WIc37jT1VWvQIDAQABAoIBAFTkZVL54P4L0EbP\ntTfAXj8ffbJ9URP5Umoxv1shbTq0Dy2sbKlvIAvGaX+4NidOddtmEVxgbPmnjZvp\nY9qSOtiUku0ZAvXHteGBzZgtGkscnW+VtZeqxUOvLQsqxdMIKxbxJTyFx1ewaWhU\ngGOOBJl9qyxK5rngWB58Bwe50khsNn2aSTE368LDuJjgTBgA7/3Zs6tVaN1Fmsv3\ne1bgVdGS9oBpNUuZRIpPXrym+DZT/9EnTmIt8d10+hoTm98ylTg/bDJoO8qyZsiF\n0KHX6cMJRyjAp/SZCpw18DBVDUgKxeLpYm1HWZ3fcxGTRMB+W2JaaZhHf8/PGWqb\nTG8arGECgYEAykKuQAbBQo9PsqGWuafv8n4DY+eyfInj1F/XRX3w5BaFi03TGl/v\nnROC3qFwvsoqTssjH4rbrjdsVcZjej1v0BFoRXOVnUEyyez2xQKCo3MTxOfXrfPX\n+k5MpBkHkCVKvXTl4CG8MK5eDbrYeMu6YvV5xgcbQYaVVduB6jqNQpkCgYEAuOqH\nuZ0bFPhxtqtJdq1bb2EllLoo6F6wcxTxjJYQxuC4aiOpPFfcE7RIdHSFrbbZhd5o\n31j4/K6xxGnxEhGtYdNGIYFV/J/H/dV2aQxj8WiPICyO841POM8NR/oyJXf7pT9A\nr2G8Xen0B/LoeVfmFHHlPDzfGHcKeXNyTrP/L8UCgYA+FpYTBX/SBNg8R6pTN6BK\n2jAEPR3naRTNHtageHa4Lcm056EEGaselty3putLRhgSs/0GM8QYCN9yvUHQRofK\nYW2W1FJ7QYZrwhhGhezAbBUHfvwQZChKqDqSrTRLJYd5/SaL1Q9GCmDI6jCFdFS1\nCBHnnkrZpIy3HHkXA/5VEQKBgA85oDs0KEqtug8kQ0Q2OdUN1p5MRZn8UeLn0ouU\nv4Tgc86paQHC6iflLCIKhgcrivVuvovFM5r6d0CIyISIWBI55whTMdU/AqRvsvQr\nRP9XcJFhmdOLyv4ObjWC8CYNnvaYIqdOEMhavvD4mxOCnTsJtaokCOpmwsIFM2Av\nic9RAoGAJNJFVUItUTw9tVNueBlZvTiypBF2/aFU0u2NQHnzrzx2O4sylZKpUJSf\nGSkvrIz3tQwqPF7p0N2RB7p/jZlwG1uH7Us4zUb1xPlVjbYwxF/ekjMrQ3eB+iS/\nOWJl8x+K2SBBs15vyiyRKceRJG9BEhegij5B5sO1XRvE5G8YNOo=\n-----END RSA PRIVATE KEY-----', 'public_key', -1, 'USA', '[10000, 60000]', 0, -1, '2023-08-20 19:32:36', '2023-08-20 19:32:47', '2023-08-20 19:32:50', 0, 0, NULL);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

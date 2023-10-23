@@ -64,9 +64,6 @@ isInChina() {
     fi
 }
 
-
-
-# 安装Docker
 install_docker() {
   echo_content skyBlue "---> install_docker"
 
@@ -105,7 +102,7 @@ EOF
   if [[  $(docker -v 2>/dev/null) ]]; then
       echo_content skyBlue "重新配置了daemon 重启docker"
       systemctl restart docker
-   fi
+  fi
 
 
 
@@ -155,7 +152,6 @@ EOF
   fi
 }
 
-# 安装agent
 install_agent() {
   echo_content skyBlue "---> install_agent"
   directory="$PWD/agent/config"
@@ -183,7 +179,7 @@ install_agent() {
     exit 1
   fi
 
-  IMAGE="neikuwaichuan/v2-agent:44.0"
+  IMAGE="neikuwaichuan/v2-agent:54.0"
   if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$IMAGE$"; then
        echo "The image $IMAGE has been pulled."
   else
@@ -198,7 +194,7 @@ install_agent() {
 #    sysctl -w kern.ipc.maxsockbuf=3014656
 #    docker pull neikuwaichuan/v2-agent:36.0
 #    docker run -d --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v /root/agent/config/settings.yml:/app/config/settings.yml -v /root/agent/tmp:/app/tmp neikuwaichuan/v2-agent:36.0
-    $isSudo docker run -d --sysctl kern.ipc.maxsockbuf=3014656 --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v "$directory"/settings.yml:/app/config/settings.yml -v "$directory_tmp":/app/tmp $IMAGE
+    $isSudo docker run -d  --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v "$directory"/settings.yml:/app/config/settings.yml -v "$directory_tmp":/app/tmp $IMAGE
 
     if [[ -n $($isSudo docker ps -q -f "name=^xiaobai_agent$" -f "status=running") ]]; then
       echo_content skyBlue "---> agent安装完成"
@@ -275,6 +271,59 @@ function check_and_set_kernel_param {
         sysctl -p
         echo_content skyBlue "已添加 $param_name 并设置为 $desired_value。"
     fi
+
+
+
+    ulimit -n 1000000
+    echo "12553500" > /proc/sys/fs/file-max
+    # 需要设置的配置项和值
+    declare -A configs
+    configs=(
+        ["net.ipv4.tcp_tw_reuse"]=1
+        ["net.ipv4.tcp_tw_recycle"]=0
+        ["net.ipv4.ip_local_port_range"]="1024 65000"
+        ["net.ipv4.tcp_mem"]="786432 2097152 3145728"
+        ["net.ipv4.tcp_rmem"]="4096 4096 16777216"
+        ["net.ipv4.tcp_wmem"]="4096 4096 16777216"
+    )
+
+    # 临时文件
+    temp_file=$(mktemp)
+
+    # 读取现有配置文件
+    if [ -f /etc/sysctl.conf ]; then
+        cat /etc/sysctl.conf > "$temp_file"
+    fi
+
+    # 更新或添加配置项
+    for key in "${!configs[@]}"; do
+        if grep -qE "^$key\s*=" "$temp_file"; then
+            # 配置项存在，检查值是否相同
+            value=$(grep -oP "$key\s*=\s*\K.*" "$temp_file")
+            if [ "$value" != "${configs[$key]}" ]; then
+                # 值不相同，更新值
+                sed -i -E "s/^($key\s*=).*/\1${configs[$key]}/" "$temp_file"
+                echo "更新 $key = ${configs[$key]}"
+            else
+                # 值相同，跳过
+                echo "跳过 $key = ${configs[$key]}"
+            fi
+        else
+            # 配置项不存在，添加配置项和值
+            echo "$key = ${configs[$key]}" >> "$temp_file"
+            echo "添加 $key = ${configs[$key]}"
+        fi
+    done
+
+    # 覆盖原有配置文件
+    mv "$temp_file" /etc/sysctl.conf
+
+    # 重新加载 sysctl 配置
+    sysctl -p
+
+    # 删除临时文件（可选，因为已经被覆盖）
+    rm -f "$temp_file"
+
 }
 
 
