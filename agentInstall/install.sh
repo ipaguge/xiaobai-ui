@@ -119,9 +119,9 @@ EOF
     fi
 
     if [ $inChina -eq 0 ]; then
-        $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+            $isSudo sh <("curl -sL https://get.docker.com") --mirror Aliyun
     else
-        $isSudo sh <(curl -sL https://get.docker.com)
+            $isSudo sh <("curl -sL https://get.docker.com")
     fi
 
     $isSudo iptables -A INPUT -p tcp --dport 10000:60000 -j ACCEPT
