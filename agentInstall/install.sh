@@ -180,7 +180,7 @@ install_agent() {
     exit 1
   fi
 
-  IMAGE="neikuwaichuan/v2-agent:69.0"
+  IMAGE="neikuwaichuan/v2-agent:70.0"
   if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$IMAGE$"; then
        echo "The image $IMAGE has been pulled."
   else
