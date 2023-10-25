@@ -99,10 +99,10 @@ EOF
 }
 EOF
   fi
-  if [[  $(docker -v 2>/dev/null) ]]; then
-      echo_content skyBlue "重新配置了daemon 重启docker"
-      systemctl restart docker
-  fi
+#  if [[  $(docker -v 2>/dev/null) ]]; then
+#      echo_content skyBlue "重新配置了daemon 重启docker"
+#      systemctl restart docker
+#  fi
 
 
 
@@ -155,10 +155,11 @@ EOF
 install_agent() {
   echo_content skyBlue "---> install_agent"
   directory="$PWD/agent/config"
-  directory_bin="$PWD/agent/bin"
+  directory_conf="$directory/settings.yml"
+  directory_frpc="$directory/frp/frpc"
+  directory_frps="$directory/frp/frps"
+  directory_xray="$directory/xray"
   directory_tmp="$PWD/agent/tmp"
-
-  filename="settings.yml"
 
   url="__agentConfig__"
 
@@ -169,17 +170,17 @@ install_agent() {
     $isSudo mkdir -p  "$directory"
   fi
 
-  if [ -f "$directory/$filename" ]; then
-    rm "$directory/$filename"
+  if [ -f "$directory_conf" ]; then
+    rm "$directory_conf"
   fi
 
   # 下载文件并保存到指定目录和指定名称
-  if ! $isSudo wget -O "$directory/$filename" "$url"; then
+  if ! $isSudo wget -O "$directory_conf" "$url"; then
     echo_content red "--->下载配置失败 $url"
     exit 1
   fi
 
-  IMAGE="neikuwaichuan/v2-agent:54.0"
+  IMAGE="neikuwaichuan/v2-agent:69.0"
   if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$IMAGE$"; then
        echo "The image $IMAGE has been pulled."
   else
@@ -191,10 +192,8 @@ install_agent() {
   if [[ -z $($isSudo docker ps -a -q -f "name=^xiaobai_agent$") ]]; then
 
     echo_content green "---> 安装agent"
-#    sysctl -w kern.ipc.maxsockbuf=3014656
-#    docker pull neikuwaichuan/v2-agent:36.0
 #    docker run -d --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v /root/agent/config/settings.yml:/app/config/settings.yml -v /root/agent/tmp:/app/tmp neikuwaichuan/v2-agent:36.0
-    $isSudo docker run -d  --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v "$directory"/settings.yml:/app/config/settings.yml -v "$directory_tmp":/app/tmp $IMAGE
+    $isSudo docker run -d  --name xiaobai_agent -e TZ=Asia/Shanghai --restart always   --network=host   -v "$directory_conf":/app/config/settings.yml -v "$directory_frpc":/app/config/frp/frpc  -v "$directory_frps":/app/config/frp/frps  -v "$directory_xray":/app/config/xray  -v "$directory_tmp":/app/tmp $IMAGE
 
     if [[ -n $($isSudo docker ps -q -f "name=^xiaobai_agent$" -f "status=running") ]]; then
       echo_content skyBlue "---> agent安装完成"
