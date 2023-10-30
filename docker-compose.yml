@@ -26,6 +26,7 @@ services:
     image: mysql:8.0
     restart: always
     container_name: xuinewdb
+    command: --skip-log-bin --expire-logs-days=7 --max-binlog-size=104857600
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: x-ui-new
