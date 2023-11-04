@@ -51,19 +51,18 @@ isInChina() {
     fi
 }
 
-install_docker() {
-  echo_content skyBlue "---> install_docker"
+isInChina
+inChina=$?
 
-  isInChina
-  inChina=$?
-
-  # Docker
+set_daemon(){
+ # Docker
   DOCKER_MIRROR='"https://reg-mirror.qiniu.com","https://gcr-mirror.qiniu.com","https://quay-mirror.qiniu.com","https://docker.mirrors.ustc.edu.cn","https://gcr.mirrors.ustc.edu.cn","https://quay.mirrors.ustc.edu.cn"'
 
+  NEW_CONFIG=""
+
   if [ $inChina -eq 0 ]; then
-      # 创建Docker配置文件并设置国内源
-      $isSudo mkdir -p /etc/docker
-      $isSudo tee /etc/docker/daemon.json >/dev/null <<EOF
+      echo_content skyBlue "设置国内daemon"
+      NEW_CONFIG=$(cat <<EOF
 {
   "registry-mirrors":[${DOCKER_MIRROR}],
   "log-driver":"json-file",
@@ -73,10 +72,10 @@ install_docker() {
   }
 }
 EOF
+)
   else
-      # 创建Docker配置文件
-      $isSudo mkdir -p /etc/docker
-      $isSudo tee /etc/docker/daemon.json >/dev/null <<EOF
+    echo_content skyBlue "设置国外daemon"
+    NEW_CONFIG=$(cat <<EOF
 {
   "log-driver":"json-file",
   "log-opts":{
@@ -85,17 +84,32 @@ EOF
   }
 }
 EOF
+)
   fi
-  if [[  $(docker -v 2>/dev/null) ]]; then
-      echo_content skyBlue "重新配置了daemon 重启docker"
-      systemctl restart docker
-   fi
 
+  # 读取现有的配置
+  EXISTING_CONFIG=""
+  if [ -f "/etc/docker/daemon.json" ]; then
+      EXISTING_CONFIG=$($isSudo cat /etc/docker/daemon.json)
+  fi
 
-
-
+  # 比较两个配置是否相同
+  if [ "$EXISTING_CONFIG" != "$NEW_CONFIG" ]; then
+      $isSudo mkdir -p /etc/docker
+      echo "$NEW_CONFIG" | $isSudo tee /etc/docker/daemon.json >/dev/null
+      if [[ $(docker -v 2>/dev/null) ]]; then
+          echo_content skyBlue "重新配置了daemon 重启docker"
+          systemctl restart docker
+      fi
+  else
+    echo_content skyBlue "daemon 已经设置"
+  fi
+}
+install_docker() {
+  echo_content skyBlue "---> install_docker"
 
   if [[ ! $(docker -v 2>/dev/null) ]]; then
+    set_daemon
     echo_content green "---> 安装Docker"
     # 关闭防火墙
     if [[ "$(firewall-cmd --state 2>/dev/null)" == "running" ]]; then
@@ -137,14 +151,6 @@ EOF
     fi
     echo_content skyBlue "---> 你已经安装了Docker"
   fi
-
-    # 检查并安装 docker-compose
-    if ! command -v docker-compose &> /dev/null; then
-        echo "docker-compose 未安装，正在安装..."
-        #$isSudo curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-        $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
-        chmod +x /usr/local/bin/docker-compose
-    fi
 }
 
 install_docker
