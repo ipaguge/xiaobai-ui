@@ -2,7 +2,6 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
-
 echo_content() {
 
   ECHO_TYPE="echo -e"
@@ -164,11 +163,13 @@ install_docker() {
   fi
 }
 install_server() {
-  if ! command -v docker-compose >/dev/null 2>&1; then
-      echo "docker-compose 未安装，正在安装..."
-      $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-      chmod +x /usr/local/bin/docker-compose
+  if ! command -v docker-compose >/dev/null; then
+    echo "docker-compose 未安装，正在安装..."
+    $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
   fi
+
+
   # 检查并安装 Git
   if ! command -v git &>/dev/null; then
     echo "Git 未安装，正在安装..."
@@ -198,7 +199,7 @@ install_server() {
   # 替换config目录下的settings.yml文件中的0.0.0.0为外网IP
   sed -i "s/0.0.0.0/$IP/g" config/settings.yml
 
-  docker-compose up -d
+  sudo docker-compose up -d
 
 }
 main() {
