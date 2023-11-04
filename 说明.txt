@@ -2,6 +2,6 @@
 
 安装命令 bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/ipaguge/xiaobai-ui/main/install.sh)
 
-bash <(curl -Ls https://raw.githubusercontent.com/ipaguge/xiaobai-ui/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/ipaguge/xiaobai-ui/main/install1.sh)
 
 目前安装脚本只支持centos7
