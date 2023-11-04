@@ -17,8 +17,10 @@ services:
       - ./v2-admin:/app/v2-admin
       - ./agentInstall:/app/agentInstall
     depends_on:
-      - mysql
-      - redis
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - xuinew
 
