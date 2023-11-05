@@ -7,7 +7,7 @@ settings:
     # 服务名称
     name: testApp
     # 端口号
-    port: 180 # 服务端口号
+    port: 80 # 服务端口号
     rpcPort: 181
     frpsPort: 700
     readtimeout: 1
