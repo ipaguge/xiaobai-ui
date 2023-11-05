@@ -26,6 +26,8 @@ services:
     image: mysql:8.0
     restart: always
     container_name: xuinewdb
+#    ports:
+#      - "3306:3306"
     command: --max-connections=3000 --skip-log-bin --expire-logs-days=7 --max-binlog-size=104857600
     environment:
       MYSQL_ROOT_PASSWORD: 123456
