@@ -161,20 +161,23 @@ install_docker() {
     fi
     echo_content skyBlue "---> 你已经安装了Docker"
   fi
+
+  if ! command -v docker-compose >/dev/null; then
+      echo "docker-compose 未安装，正在安装..."
+      $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      chmod +x /usr/local/bin/docker-compose
+  fi
+  if ! command -v docker-compose >/dev/null; then
+    echo "docker-compose 安装失败..."
+    exit 0
+  fi
 }
 install_server() {
-  if ! command -v docker-compose >/dev/null; then
-    echo "docker-compose 未安装，正在安装..."
-    $isSudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    chmod +x /usr/local/bin/docker-compose
-  fi
-
 
   # 检查并安装 Git
   if ! command -v git &>/dev/null; then
     echo "Git 未安装，正在安装..."
     if [ "$PACKAGE_MANAGER" == "apt" ]; then
-      $isSudo apt update
       $isSudo apt install -y git
     elif [ "$PACKAGE_MANAGER" == "yum" ]; then
       $isSudo yum install -y git
@@ -225,4 +228,5 @@ main() {
 
 isInChina
 inChina=$?
+$isSudo apt update
 main
