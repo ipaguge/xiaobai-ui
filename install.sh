@@ -127,7 +127,10 @@ install_docker() {
     fi
 
     if [ $inChina -eq 0 ]; then
-      $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+      #      $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+#            $isSudo sh <(curl -sL https://get.docker.com) --mirror AzureChinaCloud
+            export DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/docker-ce"
+            $isSudo sh <(curl -fsSL https://get.docker.com/ | sudo -E sh)
     else
       $isSudo sh <(curl -sL https://get.docker.com)
     fi

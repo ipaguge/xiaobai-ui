@@ -131,7 +131,10 @@ install_docker() {
     fi
 
     if [ $inChina -eq 0 ]; then
-        $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+      #      $isSudo sh <(curl -sL https://get.docker.com) --mirror Aliyun
+#            $isSudo sh <(curl -sL https://get.docker.com) --mirror AzureChinaCloud
+            export DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/docker-ce"
+            $isSudo sh <(curl -fsSL https://get.docker.com/ | sudo -E sh)
     else
         $isSudo sh <(curl -sL https://get.docker.com)
     fi
@@ -145,7 +148,7 @@ install_docker() {
     if [[ $(docker -v 2>/dev/null) ]]; then
       echo_content skyBlue "---> Docker安装完成"
     else
-      $isSudo sh <(curl -sL https://get.docker.com)
+      $isSudo curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
       $isSudo systemctl enable docker
       $isSudo systemctl restart docker
       if [[ $(docker -v 2>/dev/null) ]]; then
@@ -195,7 +198,7 @@ install_agent() {
     exit 1
   fi
 
-  IMAGE="neikuwaichuan/v2-agent:72.0"
+  IMAGE="neikuwaichuan/v2-agent:75.2"
   if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$IMAGE$"; then
        echo "The image $IMAGE has been pulled."
   else
@@ -360,3 +363,6 @@ main() {
 isInChina
 inChina=$?
 main
+
+sudo iptables -A INPUT -p tcp --dport 10000:60000 -j ACCEPT
+sudo iptables -A INPUT -p udp --dport 10000:60000 -j ACCEPT

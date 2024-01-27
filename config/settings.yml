@@ -14,6 +14,9 @@ settings:
     writertimeout: 2
     # 数据权限功能开关
     enabledp: false
+    # 日志等级, trace, debug, info, warn, error, fatal, none
+    xrayLogLevel: error
+    frpLogLevel: error
   logger:
     # 日志存放路径
     path: temp/logs
